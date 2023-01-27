@@ -1,0 +1,152 @@
+<?php
+
+require './data.php';
+
+
+?>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            CV
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/styles/css/style.css" />
+    </head>
+    <body id="cv" class="<?= $data["color"] ?>">
+        <header>
+            <h1><span><?= $data["nom"]; ?></span> <?= $data["prenom"]; ?></h1>
+            <h2>Intitulé du poste</h2>
+        </header>
+        <main>
+            <section id="left">
+                <h3>Informations</h3>
+                <section>
+                    <h4>
+                        Contact
+                    </h4>
+                    <dl>
+                        <dt>
+                            Email
+                        </dt>
+                        <dd>
+                            <?= $data["email"]; ?>
+                        </dd>
+                        <dt>
+                            Téléphone
+                        </dt>
+                        <dd>
+                            <?= $data["telephone"]; ?>
+                        </dd>
+                        <dt>
+                            LinkedIn
+                        </dt>
+                        <dd>
+                            <a href="<?= $data["linkedin"] ?>"><?= $data["linkedin"] ?></a>
+                        </dd>
+                        <dt>
+                            GitHub
+                        </dt>
+                        <dd>
+                            <a href="<?= $data["github"] ?>"><?= $data["github"] ?></a>
+                        </dd>
+                    </dl>
+                </section>
+                <section>
+                    <h4>Biographie</h4>
+                    <p>
+                        <?= $data["biographie"]; ?>
+                    </p>
+                </section>
+                <section>
+                    <h4>Loisirs</h4>
+                    <ul>
+                        <?php
+
+                            foreach($loisirs as $loisir)
+                            {
+                        ?>
+
+                            <li><?= $loisir; ?></li>
+
+                        <?php
+                            }
+                        ?>
+                    </ul>
+                </section>
+            </section>
+            <section id="right">
+                <h3>Compétences</h3>
+                <section>
+                    <h4>Langages des programmation</h4>
+                    <ul>
+                        <?php
+
+                            foreach($data["lang"] as $lang)
+                            {
+                        ?>
+
+                            <li><?= $lang; ?></li>
+
+                        <?php
+                            }
+                        ?>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Frameworks & Librairies</h4>
+                    <ul>
+                        <?php
+
+                            foreach($data["frameworks"] as $item)
+                            {
+                        ?>
+
+                            <li><?= $item; ?></li>
+
+                        <?php
+                            }
+                        ?>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Logiciels</h4>
+                    <ul>
+                        <?php
+
+                            foreach($data["software"] as $item)
+                            {
+                        ?>
+
+                            <li><?= $item; ?></li>
+
+                        <?php
+                            }
+                        ?>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Langues</h4>
+                    <ul>
+                        <?php
+
+                            foreach($data["language"] as $item)
+                            {
+                        ?>
+
+                            <li><?= $item; ?></li>
+
+                        <?php
+                            }
+                        ?>
+                    </ul>
+                </section>
+            </section>
+        </main>
+    </body>
+</html>
